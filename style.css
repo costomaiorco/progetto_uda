@@ -4,8 +4,13 @@ body {
 
 
 .sezione {
-    display: flex;          
-    gap:100px;
+    display: flex; 
+    align-items: center;         
+    gap:34.67px;
+}
+
+h3 {
+    font-size:large;
 }
 
 .testo {
@@ -25,5 +30,5 @@ main{
 }
 
 p {
-    font-size: 30px;
+    font-size: 17px;
 }
