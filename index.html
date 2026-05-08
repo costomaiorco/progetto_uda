@@ -1,26 +1,655 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progetto_uda</title>
+    <title>RE-TECH - sito sull'ewaste</title>
+
+    <!-- ho importato un font da google fonts perche mi piace -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* reset base che ci ha insegnato il prof */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* ============ NAVBAR ============ */
+
+        nav {
+            background-color: #111111;
+            border-bottom: 2px solid #00ffff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;    /* rimane in cima quando scrolli */
+            top: 0;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-nav img.icona {
+            height: 45px;
+        }
+
+        .logo-nav img.scritta {
+            height: 28px;
+        }
+
+        /* i link della navbar */
+        .nav-links {
+            list-style: none;      /* togli i pallini */
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: #00ffff;        /* diventa ciano quando ci passi sopra */
+        }
+
+        .btn-nav {
+            background-color: #00ffff;
+            color: black;
+            border: none;
+            padding: 10px 24px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .btn-nav:hover {
+            background-color: white;
+        }
+
+        /* ============ HERO (sezione principale) ============ */
+
+        .hero {
+            /* ho usato il box model per gestire lo spazio */
+            padding: 100px 40px;
+            text-align: center;
+            background-color: #0d1117;
+
+            /* ho usato flexbox per centrare tutto */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .hero img.logo-grande {
+            height: 140px;
+        }
+
+        .hero img.scritta-grande {
+            width: 500px;
+            max-width: 90%;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #888888;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .hero p span {
+            color: #7b5ea7;
+            font-weight: 700;
+        }
+
+        /* bottoni hero affiancati con flexbox */
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;          /* vanno a capo se lo schermo e piccolo */
+            justify-content: center;
+        }
+
+        .btn-primario {
+            background-color: #00ffff;
+            color: black;
+            border: none;
+            padding: 14px 36px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .btn-primario:hover {
+            background-color: white;
+        }
+
+        .btn-secondario {
+            background-color: transparent;
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            padding: 14px 36px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .btn-secondario:hover {
+            background-color: #00ffff;
+            color: black;
+        }
+
+        /* ============ STATISTICHE ============ */
+        /* ho usato css grid per fare le 4 colonne */
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            background-color: #111111;
+            border-top: 1px solid #222222;
+            border-bottom: 1px solid #222222;
+        }
+
+        .stat-box {
+            padding: 40px 20px;
+            text-align: center;
+            border-right: 1px solid #222222;
+        }
+
+        .stat-box:last-child {
+            border-right: none;
+        }
+
+        .stat-numero {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 40px;
+            color: #00ffff;
+        }
+
+        .stat-testo {
+            font-size: 12px;
+            color: #666666;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* ============ SEZIONE PROBLEMA ============ */
+
+        .problema {
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;     /* due colonne uguali */
+            gap: 60px;
+            align-items: center;
+            background-color: #0d1117;
+        }
+
+        /* la pallina che gira nel mezzo */
+        .cerchio-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            position: relative;
+        }
+
+        .cerchio-grande {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 2px solid #00ffff44;
+            position: absolute;
+            animation: gira 10s linear infinite;
+        }
+
+        .cerchio-medio {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid #7b5ea733;
+            position: absolute;
+            animation: gira 7s linear infinite reverse;
+        }
+
+        .testo-centro {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 20px;
+            color: #00ffff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testo-centro small {
+            display: block;
+            font-size: 10px;
+            color: #7b5ea7;
+            letter-spacing: 3px;
+            margin-top: 4px;
+        }
+
+        @keyframes gira {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        /* testo del problema */
+        .problema-testo h2 {
+            font-size: 34px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .problema-testo h2 em {
+            font-style: normal;
+            color: #00ffff;
+        }
+
+        .problema-testo p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #888888;
+            margin-bottom: 15px;
+        }
+
+        .problema-testo p strong {
+            color: #00ffff;
+        }
+
+        /* piccola etichetta sopra i titoli */
+        .etichetta {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #00ffff;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* ============ SEZIONE SOLUZIONI ============ */
+
+        .soluzioni {
+            padding: 80px 60px;
+            background-color: #0a0a0a;
+            text-align: center;
+        }
+
+        .soluzioni h2 {
+            font-size: 34px;
+            font-weight: 900;
+            margin-bottom: 60px;
+        }
+
+        .soluzioni h2 em {
+            font-style: normal;
+            color: #00ffff;
+        }
+
+        /* griglia delle card con css grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2px;
+            background-color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .card {
+            background-color: #0a0a0a;
+            padding: 40px 30px;
+            text-align: left;
+        }
+
+        .card:hover {
+            background-color: #0d1117;
+        }
+
+        .card-num {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            color: #333333;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .card-icona {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        /* ============ SEZIONE MISSIONE ============ */
+
+        .missione {
+            padding: 80px 60px;
+            background-color: #0d1117;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* loghi centrati con flexbox */
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-wrap img.icona-miss {
+            height: 160px;
+        }
+
+        .logo-wrap img.scritta-miss {
+            width: 240px;
+        }
+
+        /* testo missione */
+        .missione-testo h2 {
+            font-size: 34px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .missione-testo h2 em {
+            font-style: normal;
+            color: #00ffff;
+        }
+
+        /* citazione in evidenza */
+        .citazione {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 17px;
+            color: #00ffff;
+            border-left: 3px solid #00ffff;
+            padding-left: 20px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .missione-testo p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #777777;
+            margin-bottom: 12px;
+        }
+
+        /* ============ FOOTER ============ */
+
+        footer {
+            background-color: #111111;
+            border-top: 1px solid #1e1e1e;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img.icona-ft {
+            height: 30px;
+        }
+
+        .footer-logo img.scritta-ft {
+            height: 18px;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: #444444;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-links a:hover {
+            color: #00ffff;
+        }
+
+        /* per schermi piccoli tipo tablet */
+        @media (max-width: 900px) {
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .problema {
+                grid-template-columns: 1fr;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .missione {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .nav-links {
+                display: none;   /* nascondo i link su mobile per ora, non ho ancora fatto JS */
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <div>
-        <a href="pagina1.html">pagina1</a>
 
-    </div>
-    <div>
-        <a href="pagina2.html">pagina2</a>
-        
-    <div>
-        <a href="manual_component_extraction.html">manual_component_extraction</a>
-
-    </div>
-    </div>
-    <div>
-        <a href="compare_their_effectiveness_and_environmental_impact.html">compare_their_effectiveness_and_environmental_impact</a>
+<!-- NAVBAR -->
+<nav>
+    <div class="logo-nav">
+        <img src="" alt="retech" class="scritta">
     </div>
 
-</body>
-</html>
+    <ul class="nav-links">
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#soluzioni">Soluzioni</a></li>
+        <li><a href="#missione">Missione</a></li>
+    </ul>
+
+    <button class="btn-nav">Contattaci</button>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+    <img src="" alt="logo retech" class="logo-grande">
+    <img src="" alt="retech scritta" class="scritta-grande">
+    <p>
+        Ogni anno buttiamo via <span>62 milioni di tonnellate</span> di dispositivi elettronici.
+        Solo il 17% viene riciclato. <span>RE-TECH</span> vuole cambiare questo.
+    </p>
+    <div class="hero-btns">
+        <button class="btn-primario">Scopri di piu</button>
+        <button class="btn-secondario">Il nostro impatto</button>
+    </div>
+</section>
+
+
+<!-- STATISTICHE -->
+<div class="stats">
+    <div class="stat-box">
+        <div class="stat-numero">62M</div>
+        <div class="stat-testo">tonnellate di e-waste nel 2023</div>
+    </div>
+    <div class="stat-box">
+        <div class="stat-numero">17%</div>
+        <div class="stat-testo">viene riciclato correttamente</div>
+    </div>
+    <div class="stat-box">
+        <div class="stat-numero">57B$</div>
+        <div class="stat-testo">di materiali persi ogni anno</div>
+    </div>
+    <div class="stat-box">
+        <div class="stat-numero">+4%</div>
+        <div class="stat-testo">crescita annua del problema</div>
+    </div>
+</div>
+
+
+<!-- PROBLEMA -->
+<section class="problema" id="problema">
+    <!-- animazione cerchi con position absolute -->
+    <div class="cerchio-container">
+        <div class="cerchio-grande"></div>
+        <div class="cerchio-medio"></div>
+        <div class="testo-centro">
+            E-WASTE
+            <small>PROBLEMA GLOBALE</small>
+        </div>
+    </div>
+
+    <div class="problema-testo">
+        <span class="etichetta">// il problema</span>
+        <h2>I rifiuti elettronici<br>sono <em>fuori controllo</em></h2>
+        <p>
+            Ogni anno produciamo una quantita enorme di rifiuti elettronici.
+            Smartphone, pc, tablet e tv vengono buttati invece di essere riciclati.
+            Dentro ci sono <strong>sostanze tossiche</strong> che inquinano acqua e suolo.
+        </p>
+        <p>
+            Il problema e che molte persone non sanno dove portare i vecchi dispositivi.
+            O peggio, non gli importa. Ma dentro quei rifiuti ci sono
+            <strong>oro, argento e litio</strong> che potrebbero essere recuperati.
+        </p>
+        <p>
+            Se non facciamo niente, il problema continuera a peggiorare.
+            <strong>RE-TECH</strong> esiste per questo.
+        </p>
+    </div>
+</section>
+
+
+<!-- SOLUZIONI -->
+<section class="soluzioni" id="soluzioni">
+    <span class="etichetta">// le soluzioni</span>
+    <h2>Cosa fa <em>RE-TECH</em> di concreto</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <span class="card-num">01</span>
+            <span class="card-icona">♻️</span>
+            <h3>Raccolta dispositivi</h3>
+            <p>Punti di raccolta nelle citta dove portare i dispositivi rotti o vecchi. Semplice e gratuito.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">02</span>
+            <span class="card-icona">🔬</span>
+            <h3>Riciclo dei materiali</h3>
+            <p>Estraiamo i materiali preziosi come oro, rame e litio in modo sicuro e senza inquinare.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">03</span>
+            <span class="card-icona">🔄</span>
+            <h3>Economia circolare</h3>
+            <p>I materiali recuperati tornano nelle fabbriche. Meno miniere, meno co2, piu futuro.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">04</span>
+            <span class="card-icona">📱</span>
+            <h3>Dispositivi ricondizionati</h3>
+            <p>Molti dispositivi funzionano ancora. Li sistemiamo e li rivendiamo a prezzi bassi.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">05</span>
+            <span class="card-icona">🎓</span>
+            <h3>Educazione nelle scuole</h3>
+            <p>Andiamo nelle scuole a spiegare il problema. Anche noi abbiamo iniziato cosi.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">06</span>
+            <span class="card-icona">📊</span>
+            <h3>Trasparenza totale</h3>
+            <p>Pubblichiamo ogni mese quanti kg abbiamo riciclato. Niente trucchi.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- MISSIONE -->
+<section class="missione" id="missione">
+    <div class="logo-wrap">
+        <img src="" alt="retech scritta" class="scritta-miss">
+    </div>
+
+    <div class="missione-testo">
+        <span class="etichetta">// la nostra missione</span>
+        <h2>Riciclare e'<br><em>la scelta giusta</em></h2>
+
+        <div class="citazione">"Recycle is the right path."</div>
+
+        <p>
+            RE-TECH nasce perche volevamo fare qualcosa di concreto per l'ambiente.
+            Non solo parlare, ma agire. Il problema dell'e-waste e reale e sta crescendo.
+        </p>
+        <p>
+            Crediamo che la tecnologia non debba diventare spazzatura.
+            Ogni dispositivo puo avere una seconda vita se lo trattiamo nel modo giusto.
+        </p>
+        <p>
+            Il futuro non si estrae dalla terra. Si ricicla.
+        </p>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">
+        <img src="" alt="logo" class="icona-ft">
+        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFdAx0DASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAgFBgcJAQIEA//EAGI
