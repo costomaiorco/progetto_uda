@@ -15,21 +15,22 @@ h3 {
 
 .testo {
     width: 60%;
+    flex-shrink: 1;
 }
 
-#immag1 {
-    width: 6.7%;
+#logo {
+    width: 4%;
 }
 
-#immag1 img {
+#logo img {
     width: 100%;
 }
-
-#immag2 {
+.immag {
     width: 40%;
+    flex-shrink: 1;
 }
 
-#immag2 img {
+.immag img {
     width: 100%;
 }
 
