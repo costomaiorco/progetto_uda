@@ -17,11 +17,19 @@ h3 {
     width: 60%;
 }
 
-.immag {
+#immag1 {
+    width: 6.7%;
+}
+
+#immag1 img {
+    width: 100%;
+}
+
+#immag2 {
     width: 40%;
 }
 
-.immag img {
+#immag2 img {
     width: 100%;
 }
 
