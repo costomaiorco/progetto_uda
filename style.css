@@ -18,6 +18,16 @@ h3 {
     flex-shrink: 1;
 }
 
+#mechleach {
+    display: flex;
+    justify-content: space-between;
+}
+
+#colcomp {
+    color: green;
+    text-decoration: none;
+}
+
 #logo {
     width: 4%;
 }
