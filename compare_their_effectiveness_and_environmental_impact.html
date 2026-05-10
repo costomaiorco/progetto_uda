@@ -1,338 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Comparison of E-Waste Recycling Methods</title>
-
-    <style>
-        .breadcrumbs {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-
-        .breadcrumbs a {
-            text-decoration: none;
-            color: #0077cc;
-        }
-
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-
-        .breadcrumbs span {
-            color: #666;
-        }
-
-        .separator {
-            margin: 0 8px;
-            color: #999;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 300px;
-        }
-
-        table th,
-        table td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
-
-        thead td {
-            font-size: larger;
-        }
-    </style>
-
 </head>
-
 <body>
-    
-    <header>
 
-        <div id="logo">
-            <img src="immagini\logo-immagine.png" alt="logo immagine">
+<nav>
+    <div class="logo-nav">
+        <img src="immagini/logo-immagine.png" alt="logo retech" class="icona">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta">
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="manual_component_extraction.html">Manual Extraction</a></li>
+    </ul>
+    <a href="index.html"><button class="btn-nav">Back to home</button></a>
+</nav>
+
+<div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span class="separator">›</span>
+    <span>Comparison of Recycling Methods</span>
+</div>
+
+<main>
+
+    <h1>Comparison of E-Waste Recycling Methods</h1>
+
+    <p class="intro">
+        The three e-waste recycling methods discussed in the previous
+        pages—mechanical shredding, chemical leaching, and
+        <a id="colcomp" href="manual_component_extraction.html">manual component extraction</a>
+        —each offer distinct advantages and disadvantages depending on the goal of the process.
+    </p>
+
+    <!-- BLOCCO 1: Mechanical shredding — testo sx, immagine dx -->
+    <div class="blocco">
+        <div class="testo">
+            <h2>Mechanical Shredding</h2>
+            <h3>Pros:</h3>
+            <ul>
+                <li><strong>Fast processing:</strong> can handle large volumes of e-waste quickly, making it suitable for industrial scale recycling.</li>
+                <li><strong>Cost-efficient:</strong> requires less labor compared to manual methods, lowering operational costs.</li>
+                <li><strong>Material separation support:</strong> after shredding, metals and plastics can be separated using magnetic and density-based systems.</li>
+            </ul>
+            <h3>Cons:</h3>
+            <ul>
+                <li><strong>Material loss:</strong> valuable components can be damaged or mixed, reducing recovery purity.</li>
+                <li><strong>Hazardous dust and emissions:</strong> creates fine particles and potential toxic dust (like heavy metals or flame retardants).</li>
+                <li><strong>Low precision:</strong> cannot selectively preserve high-value or delicate electronic parts.</li>
+            </ul>
         </div>
+        <div class="immag">
+            <img src="immagini/Elazari_hacker_square-1024x1010.jpg" alt="Mechanical shredding">
+        </div>
+    </div>
 
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="separator">›</span>
-            <span>Comparison of Recycling Methods</span>
-        </nav>
-    
-    </header>
-    
-    <main>
+    <!-- BLOCCO 2: Chemical leaching — immagine sx, testo dx -->
+    <div class="blocco">
+        <div class="immag">
+            <img src="immagini/Elazari_hacker_square-1024x1010.jpg" alt="Chemical leaching">
+        </div>
+        <div class="testo">
+            <h2>Chemical Leaching</h2>
+            <h3>Pros:</h3>
+            <ul>
+                <li><strong>High metal recovery efficiency:</strong> can extract precious metals like gold, silver, and palladium very effectively.</li>
+                <li><strong>Selective extraction:</strong> chemicals can target specific metals with high precision.</li>
+                <li><strong>Works on fine waste:</strong> useful for materials that are too small or complex for mechanical separation.</li>
+            </ul>
+            <h3>Cons:</h3>
+            <ul>
+                <li><strong>Environmental risk:</strong> uses toxic chemicals that can cause pollution if not handled properly.</li>
+                <li><strong>High treatment cost:</strong> requires safe handling, neutralization, and waste treatment systems.</li>
+                <li><strong>Health hazards:</strong> dangerous for workers if safety protocols are not strict.</li>
+            </ul>
+        </div>
+    </div>
 
-        
+    <!-- BLOCCO 3: Manual extraction — testo sx, immagine dx -->
+    <div class="blocco">
+        <div class="testo">
+            <h2>Manual Component Extraction</h2>
+            <h3>Pros:</h3>
+            <ul>
+                <li><strong>High precision recovery:</strong> allows reuse of intact components like CPUs, RAM, and circuit boards.</li>
+                <li><strong>Lower contamination:</strong> minimal chemical or dust pollution compared to other methods.</li>
+                <li><strong>Supports reuse economy:</strong> parts can be refurbished and resold, extending product life.</li>
+            </ul>
+            <h3>Cons:</h3>
+            <ul>
+                <li><strong>Very slow process:</strong> not scalable for large volumes of e-waste.</li>
+                <li><strong>High labor cost:</strong> requires trained workers and is time-intensive.</li>
+                <li><strong>Safety risks:</strong> workers may still be exposed to hazardous materials like lead and mercury.</li>
+            </ul>
+        </div>
+        <div class="immag">
+            <img src="immagini/Elazari_hacker_square-1024x1010.jpg" alt="Manual component extraction">
+        </div>
+    </div>
 
-        <h1>
-            Comparison of E-Waste Recycling Methods
-        </h1>
+    <div class="blocco">
+        <div class="testo">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Method</td>
+                        <td>colonna</td>
+                        <td>colonna</td>
+                        <td>colonna</td>
+                        <td>colonna</td>
+                        <td>colonna</td>
+                        <td>colonna</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Mechanical Shredding</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                </tr>
+                <tr>
+                    <td>Chemical Leaching</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                </tr>
+                <tr>
+                    <td>Manual Extraction</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                    <td>example</td>
+                </tr>
+            </table>
+        </div>
+        <div class="immag">
+            <img src="immagini/an-infographic-style-illustration-displa_Gv_Bm5rRU4S_0y5zY1ZGiA_nE1Yor2dR9-b8Bm51TaIWQ_sd.jpg"
+                alt="E-waste recycling methods infographic">
+        </div>
+    </div>
 
-            <div class="sezione">
+</main>
 
-                <!-- parte sx -->
-                <div class="testo">
-                    
-                        <p class="descrizione">
-                            The three e-waste recycling methods discussed in the previous
-                            pages—mechanical shredding, chemical leaching, and 
-                            <a id="colcomp" href="manual_component_extraction.html">manual component extraction</a>
-                            —each offer distinct advantages and
-                            disadvantages depending on the goal of the process.</p>
-                            
-                            <div class="mechleach">
-                                
-                                <div class="pro-contro">
-                                    <div class="pro">
-                                        <h3>Pros of mechanical shredding:</h3> 
-                                        <ul>
-                                            <li>
-                                                <strong>Fast processing:</strong> can handle large volumes of e-waste quickly,
-                                                making it suitable for industrial scale recycling.
-                                            </li>
-                                            <li>
-                                                <strong>Cost-efficient:</strong> requires less labor compared to manual methods,
-                                                lowering operational costs.
-                                            </li>
-                                            <li>
-                                                <strong>Material separation support:</strong> after shredding, metals and plastics
-                                                can be separated using magnetic and density-based systems.
-                                            </li>
-                                        </ul>
-
-                                    </div>
-
-                                    <div class="contro">
-                                        <h3>Cons of mechanical shredding:</h3>
-                                        <ul>
-                                            <li>
-                                                <strong>Material loss:</strong> valuable components can be damaged or mixed,
-                                                reducing recovery purity.
-                                            </li>
-                                            <li>
-                                                <strong>Hazardous dust and emissions:</strong> creates fine particles and 
-                                                potential toxic dust (like heavy metals or flame retardants).
-                                            </li>
-                                            <li>
-                                                <strong>Low precision:</strong> cannot selectively preserve high-value or 
-                                                delicate electronic parts.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="immag">
-                                    <img src="immagini/Elazari_hacker_square-1024x1010.jpg" alt="n/d">
-                                </div>
-
-                            </div>
-
-                            <div class="mechleach">
-                                <h3>Pros of chemical leaching:</h3>
-                                <ul>
-                                    <li>
-                                        <strong>High metal recovery efficiency:</strong> can extract precious metals like gold, silver, and palladium very effectively.
-                                    </li>
-                                    <li>
-                                        <strong>Selective extraction:</strong> chemicals can target specific metals with high precision.
-                                    </li>
-                                    <li>
-                                        <strong>Works on fine waste:</strong> useful for materials that are too small or complex for mechanical separation.
-                                    </li>
-                                </ul>
-
-                                <h3>Cons of chemical leaching:</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Environmental risk:</strong> uses toxic chemicals that can cause pollution if not handled properly.
-                                    </li>
-                                    <li>
-                                        <strong>High treatment cost:</strong> requires safe handling, neutralization, and waste treatment systems.
-                                    </li>
-                                    <li>
-                                        <strong>Health hazards:</strong> dangerous for workers if safety protocols are not strict.
-                                    </li>
-                                </ul>
-
-                            </div>
-
-                            <div class="mechleach">
-                                <h3>Pros of manual component extraction:</h3>
-                                <ul>
-                                    <li>
-                                        <strong>High precision recovery:</strong> allows reuse of intact components like cpus, ram, and circuit boards.
-                                    </li>
-                                    <li>
-                                        <strong>Lower contamination:</strong> minimal chemical or dust pollution compared to other methods.
-                                    </li>
-                                    <li>
-                                        <strong>Supports reuse economy:</strong> parts can be refurbished and resold, extending product life.
-                                    </li>
-                                </ul>
-
-                                <h3>Cons of manual component extraction:</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Very slow process:</strong> not scalable for large volumes of e-waste.
-                                    </li>
-                                    <li>
-                                        <strong>High labor cost:</strong> requires trained workers and is time-intensive.
-                                    </li>
-                                    <li>
-                                        <strong>Safety risks:</strong> workers may still be exposed to hazardous materials like lead and mercury.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            
-                            
-                            The table below compares these
-                            methods in terms of efficiency, cost, environmental impact, and
-                            overall recovery performance.
-
-                    <table>
-
-                        <thead>
-                            <td>
-                                colonna
-                            </td>
-
-                            <td>
-                                colonna
-                            </td>
-
-                            <td>
-                                colonna
-                            </td>
-
-                            <td>
-                                colonna
-                            </td>
-
-                            <td>
-                                colonna
-                            </td>
-
-                            <td>
-                                colonna
-                            </td>
-
-                            <td>
-                                colonna
-                            </td>
-                        </thead>
-
-                        <tr>
-                            <td>
-                                metodo1
-                            </td>
-
-                            <td>
-                                metodo1
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                metodo2
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                metodo1
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                metodo3
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                example
-                            </td>
-
-                            <td>
-                                metodo1
-                            </td>
-
-                            <td>
-                                metodo1
-                            </td>
-                        </tr>
-
-                    </table>
-
-                </div>
-
-                
-
-            </div>
-            
-            <!-- parte dx -->
-                <div class="immag">
-                    <img src="immagini/an-infographic-style-illustration-displa_Gv_Bm5rRU4S_0y5zY1ZGiA_nE1Yor2dR9-b8Bm51TaIWQ_sd.jpg"
-                        alt="E-waste recycling methods">
-                </div>
-    </main>
+<footer>
+    <div class="footer-logo">
+        <img src="immagini/logo-immagine.png" alt="logo" class="icona-ft">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta-ft">
+    </div>
+    <ul class="footer-links">
+        <li><a href="#">privacy</a></li>
+        <li><a href="#">contacts</a></li>
+        <li><a href="index.html">home</a></li>
+    </ul>
+</footer>
 
 </body>
-
 </html>

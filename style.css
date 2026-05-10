@@ -1,53 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px; /* era 16px */
 }
 
-
-.sezione {
-    display: flex; 
-    align-items: center;         
-    gap:34.67px;
-}
-
-h3 {
-    font-size:large;
-}
-
-.testo {
-    width: 60%;
-    flex-shrink: 1;
-}
-
-#mechleach {
+/* ── Nav ── */
+nav {
+    background-color: #111111;
+    border-bottom: 2px solid #00ffff;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-#colcomp {
-    color: green;
+.logo-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-nav img.icona { height: 45px; }
+.logo-nav img.scritta { height: 28px; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 16px; /* era 14px */
+}
+
+.nav-links a:hover { color: #00ffff; }
+
+.btn-nav {
+    background-color: #00ffff;
+    color: black;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 15px; /* era 14px implicito */
+    cursor: pointer;
+}
+
+.btn-nav:hover { background-color: white; }
+
+/* ── Breadcrumbs ── */
+.breadcrumbs {
+    background-color: #111111;
+    border-bottom: 1px solid #1e1e1e;
+    padding: 10px 40px;
+    font-size: 14px; /* era 13px */
+    color: #666666;
+}
+
+.breadcrumbs a {
+    color: #00ffff;
     text-decoration: none;
 }
 
-#logo {
-    width: 4%;
+.breadcrumbs a:hover { text-decoration: underline; }
+
+.breadcrumbs span { color: #666666; }
+
+.separator {
+    margin: 0 8px;
+    color: #444444;
 }
 
-#logo img {
-    width: 100%;
+/* ── Main ── */
+main {
+    padding: 60px 60px;
+    background-color: #0d1117;
 }
-.immag {
-    width: 40%;
-    flex-shrink: 1;
+
+h1 {
+    font-size: 36px; /* era 32px */
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: white;
 }
+
+.intro {
+    font-size: 17px; /* era 15px */
+    color: #888888;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+#colcomp {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+#colcomp:hover { text-decoration: underline; }
+
+/* ── Blocchi ── */
+.blocco {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.blocco:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.testo { flex: 1; }
+
+h2 {
+    font-size: 24px; /* era 22px */
+    font-weight: 900;
+    color: #00ffff;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 16px; /* era 14px */
+    font-weight: 700;
+    color: #aaaaaa;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 16px; /* era 14px */
+    color: #888888;
+    line-height: 1.7;
+    padding: 6px 0;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+ul li strong { color: white; }
+
+/* ── Immagine ── */
+.immag { flex: 0 0 300px; }
 
 .immag img {
     width: 100%;
+    height: auto;
+    border: 1px solid #1e1e1e;
+    border-left: 3px solid #00ffff;
 }
 
-main{
-    margin: 20px;
+/* ── Immagine grande (manual extraction) ── */
+.immag-grande {
+    flex: 1;
 }
 
-p {
-    font-size: 17px;
+.immag-grande img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
+/* ── Tabella ── */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td {
+    border: 1px solid #1e1e1e;
+    padding: 10px 14px;
+    font-size: 15px; /* era 13px */
+    color: #888888;
+}
+
+thead td {
+    background-color: #111111;
+    color: #00ffff;
+    font-size: 15px; /* era 13px */
+    font-weight: 700;
+}
+
+tr:hover td { background-color: #111111; }
+
+/* ── Footer ── */
+footer {
+    background-color: #111111;
+    border-top: 1px solid #1e1e1e;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img.icona-ft { height: 30px; }
+.footer-logo img.scritta-ft { height: 18px; }
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    font-size: 14px; /* era 12px */
+    color: #444444;
+    text-decoration: none;
+}
+
+.footer-links a:hover { color: #00ffff; }

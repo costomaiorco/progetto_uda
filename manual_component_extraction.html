@@ -1,161 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Manual Component Extraction</title>
-
-    <style>
-        .breadcrumbs {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-
-        .breadcrumbs a {
-            text-decoration: none;
-            color: #0077cc;
-        }
-
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-
-        .breadcrumbs span {
-            color: #666;
-        }
-
-        .separator {
-            margin: 0 8px;
-            color: #999;
-        }
-    </style>
 </head>
-
 <body>
 
-    <header>
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="separator">›</span>
+<nav>
+    <div class="logo-nav">
+        <img src="immagini/logo-immagine.png" alt="logo retech" class="icona">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta">
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="comparison.html">Comparison</a></li>
+    </ul>
+    <a href="index.html"><button class="btn-nav">Back to home</button></a>
+</nav>
 
-            <span>Manual component extraction</span>
-        </nav>
-    </header>
+<div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span class="separator">›</span>
+    <span>Manual Component Extraction</span>
+</div>
 
-    <main>
-        <h1>
-            Manual Component Extraction
-        </h1>
+<main>
 
-        <div id="contenitore">
+    <h1>Manual Component Extraction</h1>
 
-            <div class="sezione">
+    <!-- BLOCCO 1: testo sx, immagine dx -->
+    <div class="blocco">
+        <div class="testo">
+            <p class="intro">
+                Manual component extraction is the process of removing electronic
+                components from printed circuit boards (PCBs) by hand using
+                specific tools and techniques. This method is commonly used in
+                electronics repair, recycling, and reverse engineering because it
+                allows technicians to recover reusable parts without damaging the
+                board or the components themselves.
+            </p>
 
-                <!-- parte sx -->
-                <div class="testo">
+            <h2>Main tools used</h2>
+            <p class="intro">
+                The extraction process usually requires tools such as soldering
+                irons, desoldering pumps, solder wick, tweezers, heat guns, and
+                protective equipment. These tools help melt and remove solder
+                safely so that components like resistors, capacitors, transistors,
+                and integrated circuits can be detached from the PCB.
+            </p>
 
-                    <div class="paragrafo1">
-                        <p class="descrizione">
-                            Manual component extraction is the process of removing electronic
-                            components from printed circuit boards (PCBs) by hand using
-                            specific tools and techniques. This method is commonly used in
-                            electronics repair, recycling, and reverse engineering because it
-                            allows technicians to recover reusable parts without damaging the
-                            board or the components themselves.
-                        </p>
-                    </div>
-
-                    <div class="paragrafo2">
-                        <h3>Main tools used</h3>
-
-                        <p class="descrizione">
-                            The extraction process usually requires tools such as soldering
-                            irons, desoldering pumps, solder wick, tweezers, heat guns, and
-                            protective equipment. These tools help melt and remove solder
-                            safely so that components like resistors, capacitors, transistors,
-                            and integrated circuits can be detached from the PCB.
-                        </p>
-                    </div>
-
-                    <div class="paragrafo3">
-                        <h3>Applications and advantages</h3>
-
-                        <p class="descrizione">
-                            Manual extraction is important in electronic recycling because it
-                            reduces electronic waste and allows valuable materials and
-                            components to be reused. It is also useful in repair laboratories
-                            and educational environments where technicians need to replace
-                            damaged parts or study the structure of electronic circuits in
-                            detail.
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- parte dx -->
-                <div class="immag">
-                    <img src="immagini/ChatGPT Image 7 mag 2026, 16_08_22.png"
-                        alt="Electronic component extraction">
-                </div>
-
-            </div>
-
-            <div class="sezione">
-
-                <!-- parte sx -->
-                <div class="immag">
-                    <img src="immagini/ChatGPT Image 7 mag 2026, 16_02_54.png"
-                        alt="PCB desoldering process">
-                </div>
-
-                <!-- parte dx -->
-                <div class="testo">
-
-                    <div class="paragrafo1">
-                        <h3>Desoldering process</h3>
-
-                        <p class="descrizione">
-                            Desoldering is one of the most important phases of manual
-                            component extraction. The solder joints are heated until the
-                            solder melts, allowing the component to be removed carefully.
-                            Different techniques are used depending on whether the component
-                            is through-hole or surface-mount (SMD).
-                        </p>
-                    </div>
-
-                    <div class="paragrafo2">
-                        <h3>Safety considerations</h3>
-
-                        <p class="descrizione">
-                            During extraction, workers must pay attention to safety because
-                            electronic boards may contain hazardous materials such as lead,
-                            chemical residues, or sharp metal parts. Proper ventilation,
-                            safety glasses, and anti-static protection are recommended to
-                            avoid injuries and protect sensitive electronic devices.
-                        </p>
-                    </div>
-
-                    <div class="paragrafo3">
-                        <h3>Environmental impact</h3>
-
-                        <p class="descrizione">
-                            Recovering components manually contributes to sustainability by
-                            reducing the amount of e-waste sent to landfills. Reusing
-                            functional electronic parts decreases the need for raw material
-                            extraction and lowers the environmental impact associated with
-                            manufacturing new electronic components.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
+            <h2>Applications and advantages</h2>
+            <p class="intro">
+                Manual extraction is important in electronic recycling because it
+                reduces electronic waste and allows valuable materials and
+                components to be reused. It is also useful in repair laboratories
+                and educational environments where technicians need to replace
+                damaged parts or study the structure of electronic circuits in
+                detail.
+            </p>
         </div>
-    </main>
+        <div class="immag immag-grande">
+            <img src="immagini/ChatGPT Image 7 mag 2026, 16_08_22.png"
+                alt="Electronic component extraction">
+        </div>
+    </div>
+
+    <!-- BLOCCO 2: immagine sx, testo dx -->
+    <div class="blocco">
+        <div class="immag immag-grande">
+            <img src="immagini/ChatGPT Image 7 mag 2026, 16_02_54.png"
+                alt="PCB desoldering process">
+        </div>
+        <div class="testo">
+            <h2>Desoldering process</h2>
+            <p class="intro">
+                Desoldering is one of the most important phases of manual
+                component extraction. The solder joints are heated until the
+                solder melts, allowing the component to be removed carefully.
+                Different techniques are used depending on whether the component
+                is through-hole or surface-mount (SMD).
+            </p>
+
+            <h2>Safety considerations</h2>
+            <p class="intro">
+                During extraction, workers must pay attention to safety because
+                electronic boards may contain hazardous materials such as lead,
+                chemical residues, or sharp metal parts. Proper ventilation,
+                safety glasses, and anti-static protection are recommended to
+                avoid injuries and protect sensitive electronic devices.
+            </p>
+
+            <h2>Environmental impact</h2>
+            <p class="intro">
+                Recovering components manually contributes to sustainability by
+                reducing the amount of e-waste sent to landfills. Reusing
+                functional electronic parts decreases the need for raw material
+                extraction and lowers the environmental impact associated with
+                manufacturing new electronic components.
+            </p>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer-logo">
+        <img src="immagini/logo-immagine.png" alt="logo" class="icona-ft">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta-ft">
+    </div>
+    <ul class="footer-links">
+        <li><a href="#">privacy</a></li>
+        <li><a href="#">contacts</a></li>
+        <li><a href="index.html">home</a></li>
+    </ul>
+</footer>
 
 </body>
-
 </html>

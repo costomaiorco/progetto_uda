@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE-TECH - sito sull'ewaste</title>
-
-    <!-- ho importato un font da google fonts perche mi piace -->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <title>RE-TECH</title>
     <style>
-
-        /* reset base che ci ha insegnato il prof */
         * {
             margin: 0;
             padding: 0;
@@ -21,9 +13,8 @@
             background-color: #0a0a0a;
             color: white;
             font-family: 'Exo 2', sans-serif;
+            font-size: 16px;
         }
-
-        /* ============ NAVBAR ============ */
 
         nav {
             background-color: #111111;
@@ -32,8 +23,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;    /* rimane in cima quando scrolli */
-            top: 0;
         }
 
         .logo-nav {
@@ -42,17 +31,11 @@
             gap: 12px;
         }
 
-        .logo-nav img.icona {
-            height: 45px;
-        }
+        .logo-nav img.icona { height: 45px; }
+        .logo-nav img.scritta { height: 28px; }
 
-        .logo-nav img.scritta {
-            height: 28px;
-        }
-
-        /* i link della navbar */
         .nav-links {
-            list-style: none;      /* togli i pallini */
+            list-style: none;
             display: flex;
             gap: 30px;
         }
@@ -61,13 +44,9 @@
             color: #aaaaaa;
             text-decoration: none;
             font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
-        .nav-links a:hover {
-            color: #00ffff;        /* diventa ciano quando ci passi sopra */
-        }
+        .nav-links a:hover { color: #00ffff; }
 
         .btn-nav {
             background-color: #00ffff;
@@ -76,38 +55,23 @@
             padding: 10px 24px;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 2px;
             cursor: pointer;
         }
 
-        .btn-nav:hover {
-            background-color: white;
-        }
-
-        /* ============ HERO (sezione principale) ============ */
+        .btn-nav:hover { background-color: white; }
 
         .hero {
-            /* ho usato il box model per gestire lo spazio */
             padding: 100px 40px;
             text-align: center;
             background-color: #0d1117;
-
-            /* ho usato flexbox per centrare tutto */
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 25px;
         }
 
-        .hero img.logo-grande {
-            height: 140px;
-        }
-
-        .hero img.scritta-grande {
-            width: 500px;
-            max-width: 90%;
-        }
+        .hero img.logo-grande { height: 140px; }
+        .hero img.scritta-grande { width: 500px; max-width: 90%; }
 
         .hero p {
             font-size: 18px;
@@ -116,17 +80,11 @@
             line-height: 1.7;
         }
 
-        .hero p span {
-            color: #7b5ea7;
-            font-weight: 700;
-        }
+        .hero p span { color: #7b5ea7; font-weight: 700; }
 
-        /* bottoni hero affiancati con flexbox */
         .hero-btns {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;          /* vanno a capo se lo schermo e piccolo */
-            justify-content: center;
         }
 
         .btn-primario {
@@ -140,9 +98,7 @@
             cursor: pointer;
         }
 
-        .btn-primario:hover {
-            background-color: white;
-        }
+        .btn-primario:hover { background-color: white; }
 
         .btn-secondario {
             background-color: transparent;
@@ -155,13 +111,7 @@
             cursor: pointer;
         }
 
-        .btn-secondario:hover {
-            background-color: #00ffff;
-            color: black;
-        }
-
-        /* ============ STATISTICHE ============ */
-        /* ho usato css grid per fare le 4 colonne */
+        .btn-secondario:hover { background-color: #00ffff; color: black; }
 
         .stats {
             display: grid;
@@ -177,86 +127,31 @@
             border-right: 1px solid #222222;
         }
 
-        .stat-box:last-child {
-            border-right: none;
-        }
+        .stat-box:last-child { border-right: none; }
 
         .stat-numero {
-            font-family: 'Share Tech Mono', monospace;
             font-size: 40px;
+            font-weight: 900;
             color: #00ffff;
         }
 
         .stat-testo {
             font-size: 12px;
             color: #666666;
-            letter-spacing: 1px;
             margin-top: 8px;
         }
-
-        /* ============ SEZIONE PROBLEMA ============ */
 
         .problema {
             padding: 80px 60px;
             display: grid;
-            grid-template-columns: 1fr 1fr;     /* due colonne uguali */
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
             background-color: #0d1117;
         }
 
-        /* la pallina che gira nel mezzo */
-        .cerchio-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            position: relative;
-        }
-
-        .cerchio-grande {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 2px solid #00ffff44;
-            position: absolute;
-            animation: gira 10s linear infinite;
-        }
-
-        .cerchio-medio {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 2px solid #7b5ea733;
-            position: absolute;
-            animation: gira 7s linear infinite reverse;
-        }
-
-        .testo-centro {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 20px;
-            color: #00ffff;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testo-centro small {
-            display: block;
-            font-size: 10px;
-            color: #7b5ea7;
-            letter-spacing: 3px;
-            margin-top: 4px;
-        }
-
-        @keyframes gira {
-            from { transform: rotate(0deg); }
-            to   { transform: rotate(360deg); }
-        }
-
-        /* testo del problema */
         .problema-testo h2 {
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 900;
             margin-bottom: 20px;
             line-height: 1.2;
@@ -268,151 +163,42 @@
         }
 
         .problema-testo p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.8;
             color: #888888;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
-        .problema-testo p strong {
-            color: #00ffff;
-        }
+        .problema-testo p strong { color: #00ffff; }
 
-        /* piccola etichetta sopra i titoli */
-        .etichetta {
-            font-size: 11px;
-            letter-spacing: 4px;
-            color: #00ffff;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        /* ============ SEZIONE SOLUZIONI ============ */
-
-        .soluzioni {
-            padding: 80px 60px;
-            background-color: #0a0a0a;
-            text-align: center;
-        }
-
-        .soluzioni h2 {
-            font-size: 34px;
-            font-weight: 900;
-            margin-bottom: 60px;
-        }
-
-        .soluzioni h2 em {
-            font-style: normal;
-            color: #00ffff;
-        }
-
-        /* griglia delle card con css grid */
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2px;
-            background-color: #1a1a1a;
-            border: 1px solid #1a1a1a;
-        }
-
-        .card {
-            background-color: #0a0a0a;
-            padding: 40px 30px;
-            text-align: left;
-        }
-
-        .card:hover {
-            background-color: #0d1117;
-        }
-
-        .card-num {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 11px;
-            color: #333333;
-            letter-spacing: 3px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .card-icona {
-            font-size: 32px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #666666;
-            line-height: 1.7;
-        }
-
-        /* ============ SEZIONE MISSIONE ============ */
-
-        .missione {
-            padding: 80px 60px;
-            background-color: #0d1117;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        /* loghi centrati con flexbox */
-        .logo-wrap {
+        .azienda-box {
+            background-color: #111111;
+            border: 1px solid #1e1e1e;
+            border-left: 3px solid #00ffff;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
         }
 
-        .logo-wrap img.icona-miss {
-            height: 160px;
-        }
+        .azienda-box img.icona-az { height: 100px; }
+        .azienda-box img.scritta-az { width: 200px; }
 
-        .logo-wrap img.scritta-miss {
-            width: 240px;
-        }
-
-        /* testo missione */
-        .missione-testo h2 {
-            font-size: 34px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .missione-testo h2 em {
-            font-style: normal;
-            color: #00ffff;
-        }
-
-        /* citazione in evidenza */
-        .citazione {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 17px;
-            color: #00ffff;
-            border-left: 3px solid #00ffff;
-            padding-left: 20px;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .missione-testo p {
+        .azienda-box p {
             font-size: 15px;
             line-height: 1.8;
-            color: #777777;
-            margin-bottom: 12px;
+            color: #888888;
+            text-align: center;
         }
 
-        /* ============ FOOTER ============ */
+        .azienda-box p strong { color: #7b5ea7; }
+
+        .citazione {
+            font-size: 15px;
+            color: #00ffff;
+            text-align: center;
+        }
 
         footer {
             background-color: #111111;
@@ -421,8 +207,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
         }
 
         .footer-logo {
@@ -431,225 +215,117 @@
             gap: 10px;
         }
 
-        .footer-logo img.icona-ft {
-            height: 30px;
-        }
+        .footer-logo img.icona-ft { height: 30px; }
+        .footer-logo img.scritta-ft { height: 18px; }
 
-        .footer-logo img.scritta-ft {
-            height: 18px;
-        }
+        footer p { font-size: 12px; color: #444444; }
 
-        footer p {
-            font-size: 12px;
-            color: #444444;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+        .footer-links { list-style: none; display: flex; gap: 25px; }
 
         .footer-links a {
             font-size: 12px;
             color: #444444;
             text-decoration: none;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
-        .footer-links a:hover {
-            color: #00ffff;
-        }
-
-        /* per schermi piccoli tipo tablet */
-        @media (max-width: 900px) {
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-            .problema {
-                grid-template-columns: 1fr;
-            }
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            .missione {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            .nav-links {
-                display: none;   /* nascondo i link su mobile per ora, non ho ancora fatto JS */
-            }
-        }
-
+        .footer-links a:hover { color: #00ffff; }
     </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo-nav">
-        <img src="" alt="retech" class="scritta">
+        <img src="immagini/logo-immagine.png" alt="logo retech" class="icona">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta">
     </div>
-
     <ul class="nav-links">
-        <li><a href="#problema">Problema</a></li>
-        <li><a href="#soluzioni">Soluzioni</a></li>
-        <li><a href="#missione">Missione</a></li>
+        <li><a href="#stats">Statistics</a></li>
+        <li><a href="#problema">The Problem</a></li>
+        <li><a href="#footer">Contacts</a></li>
     </ul>
-
-    <button class="btn-nav">Contattaci</button>
+    <a href="chisiamo.html"><button class="btn-nav">About us</button></a>
 </nav>
 
-
-<!-- HERO -->
 <section class="hero">
-    <img src="" alt="logo retech" class="logo-grande">
-    <img src="" alt="retech scritta" class="scritta-grande">
+    <img src="immagini/logo-immagine.png" alt="logo retech" class="logo-grande">
+    <img src="immagini/logo-scritta.png" alt="retech scritta" class="scritta-grande">
     <p>
-        Ogni anno buttiamo via <span>62 milioni di tonnellate</span> di dispositivi elettronici.
-        Solo il 17% viene riciclato. <span>RE-TECH</span> vuole cambiare questo.
+        Every year we throw away <span>62 million tons</span> of electronic devices.
+        Only 17% gets recycled. <span>RE-TECH</span> wants to change this.
     </p>
     <div class="hero-btns">
-        <button class="btn-primario">Scopri di piu</button>
-        <button class="btn-secondario">Il nostro impatto</button>
+        <button class="btn-primario">Learn more</button>
+        <button class="btn-secondario">Our impact</button>
     </div>
 </section>
 
-
-<!-- STATISTICHE -->
-<div class="stats">
+<div class="stats" id="stats">
     <div class="stat-box">
         <div class="stat-numero">62M</div>
-        <div class="stat-testo">tonnellate di e-waste nel 2023</div>
+        <div class="stat-testo">tons of e-waste in 2023</div>
     </div>
     <div class="stat-box">
         <div class="stat-numero">17%</div>
-        <div class="stat-testo">viene riciclato correttamente</div>
+        <div class="stat-testo">correctly recycled</div>
     </div>
     <div class="stat-box">
         <div class="stat-numero">57B$</div>
-        <div class="stat-testo">di materiali persi ogni anno</div>
+        <div class="stat-testo">in materials lost every year</div>
     </div>
     <div class="stat-box">
         <div class="stat-numero">+4%</div>
-        <div class="stat-testo">crescita annua del problema</div>
+        <div class="stat-testo">annual growth of the problem</div>
     </div>
 </div>
 
-
-<!-- PROBLEMA -->
 <section class="problema" id="problema">
-    <!-- animazione cerchi con position absolute -->
-    <div class="cerchio-container">
-        <div class="cerchio-grande"></div>
-        <div class="cerchio-medio"></div>
-        <div class="testo-centro">
-            E-WASTE
-            <small>PROBLEMA GLOBALE</small>
-        </div>
-    </div>
-
     <div class="problema-testo">
-        <span class="etichetta">// il problema</span>
-        <h2>I rifiuti elettronici<br>sono <em>fuori controllo</em></h2>
+        <h2>Electronic waste is <em>out of control</em></h2>
         <p>
-            Ogni anno produciamo una quantita enorme di rifiuti elettronici.
-            Smartphone, pc, tablet e tv vengono buttati invece di essere riciclati.
-            Dentro ci sono <strong>sostanze tossiche</strong> che inquinano acqua e suolo.
+            Every year the world produces over <strong>62 million tons</strong>
+            of electronic waste. Smartphones, computers, TVs and tablets are
+            thrown away instead of being recycled, releasing toxic substances
+            like lead, mercury and cadmium into the soil and groundwater.
         </p>
         <p>
-            Il problema e che molte persone non sanno dove portare i vecchi dispositivi.
-            O peggio, non gli importa. Ma dentro quei rifiuti ci sono
-            <strong>oro, argento e litio</strong> che potrebbero essere recuperati.
+            Only <strong>17% of e-waste</strong> is handled correctly.
+            The remaining 83% ends up in illegal dumps or gets exported to developing
+            countries, putting the health of thousands of people at risk.
         </p>
         <p>
-            Se non facciamo niente, il problema continuera a peggiorare.
-            <strong>RE-TECH</strong> esiste per questo.
+            Inside every device there are <strong>precious materials</strong> like gold,
+            silver and lithium that could be recovered. Every year we lose
+            over 57 billion dollars in resources that could re-enter the supply chain.
         </p>
     </div>
-</section>
-
-
-<!-- SOLUZIONI -->
-<section class="soluzioni" id="soluzioni">
-    <span class="etichetta">// le soluzioni</span>
-    <h2>Cosa fa <em>RE-TECH</em> di concreto</h2>
-
-    <div class="card-grid">
-        <div class="card">
-            <span class="card-num">01</span>
-            <span class="card-icona">♻️</span>
-            <h3>Raccolta dispositivi</h3>
-            <p>Punti di raccolta nelle citta dove portare i dispositivi rotti o vecchi. Semplice e gratuito.</p>
-        </div>
-        <div class="card">
-            <span class="card-num">02</span>
-            <span class="card-icona">🔬</span>
-            <h3>Riciclo dei materiali</h3>
-            <p>Estraiamo i materiali preziosi come oro, rame e litio in modo sicuro e senza inquinare.</p>
-        </div>
-        <div class="card">
-            <span class="card-num">03</span>
-            <span class="card-icona">🔄</span>
-            <h3>Economia circolare</h3>
-            <p>I materiali recuperati tornano nelle fabbriche. Meno miniere, meno co2, piu futuro.</p>
-        </div>
-        <div class="card">
-            <span class="card-num">04</span>
-            <span class="card-icona">📱</span>
-            <h3>Dispositivi ricondizionati</h3>
-            <p>Molti dispositivi funzionano ancora. Li sistemiamo e li rivendiamo a prezzi bassi.</p>
-        </div>
-        <div class="card">
-            <span class="card-num">05</span>
-            <span class="card-icona">🎓</span>
-            <h3>Educazione nelle scuole</h3>
-            <p>Andiamo nelle scuole a spiegare il problema. Anche noi abbiamo iniziato cosi.</p>
-        </div>
-        <div class="card">
-            <span class="card-num">06</span>
-            <span class="card-icona">📊</span>
-            <h3>Trasparenza totale</h3>
-            <p>Pubblichiamo ogni mese quanti kg abbiamo riciclato. Niente trucchi.</p>
-        </div>
-    </div>
-</section>
-
-
-<!-- MISSIONE -->
-<section class="missione" id="missione">
-    <div class="logo-wrap">
-        <img src="" alt="retech scritta" class="scritta-miss">
-    </div>
-
-    <div class="missione-testo">
-        <span class="etichetta">// la nostra missione</span>
-        <h2>Riciclare e'<br><em>la scelta giusta</em></h2>
-
+    <div class="azienda-box">
+        <img src="immagini/logo-immagine.png" alt="retech" class="icona-az">
+        <img src="immagini/logo-scritta.png" alt="retech scritta" class="scritta-az">
+        <p>
+            <strong>RE-TECH</strong> was born to address this problem.
+            We collect discarded electronic devices, safely extract
+            precious materials and give a second life to everything
+            that can still be used.
+        </p>
+        <p>
+            Not just recycling: we bring environmental education to schools
+            and companies, because change starts with awareness.
+        </p>
         <div class="citazione">"Recycle is the right path."</div>
-
-        <p>
-            RE-TECH nasce perche volevamo fare qualcosa di concreto per l'ambiente.
-            Non solo parlare, ma agire. Il problema dell'e-waste e reale e sta crescendo.
-        </p>
-        <p>
-            Crediamo che la tecnologia non debba diventare spazzatura.
-            Ogni dispositivo puo avere una seconda vita se lo trattiamo nel modo giusto.
-        </p>
-        <p>
-            Il futuro non si estrae dalla terra. Si ricicla.
-        </p>
     </div>
 </section>
 
-
-<!-- FOOTER -->
-<footer>
+<footer id="footer">
     <div class="footer-logo">
-        <img src="" alt="logo" class="icona-ft">
-        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFdAx0DASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAgFBgcJAQIEA//EAGI
+        <img src="immagini/logo-immagine.png" alt="logo" class="icona-ft">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta-ft">
+    </div>
+    <ul class="footer-links">
+        <li><a href="#">privacy</a></li>
+        <li><a href="#">contacts</a></li>
+        <li><a href="chisiamo.html">about us</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

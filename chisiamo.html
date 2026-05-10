@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>RE-TECH - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 16px;
+        }
+
+        nav {
+            background-color: #111111;
+            border-bottom: 2px solid #00ffff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-nav img.icona { height: 45px; }
+        .logo-nav img.scritta { height: 28px; }
+
+        .btn-back {
+            background-color: transparent;
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            padding: 10px 24px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .btn-back:hover {
+            background-color: #00ffff;
+            color: black;
+        }
+
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            background-color: #0d1117;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero img.logo-grande { height: 120px; }
+        .hero img.scritta-grande { width: 420px; max-width: 90%; }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #00ffff;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #888888;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .sezione {
+            padding: 80px 60px;
+            background-color: #0a0a0a;
+        }
+
+        .sezione h2 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .sezione h2 em {
+            font-style: normal;
+            color: #00ffff;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card-membro {
+            background-color: #111111;
+            border: 1px solid #1e1e1e;
+            border-top: 3px solid #00ffff;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #0d1117;
+            border: 2px solid #00ffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: #00ffff;
+        }
+
+        .card-membro h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .ruolo {
+            font-size: 13px;
+            color: #7b5ea7;
+            font-weight: 700;
+        }
+
+        .card-membro p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .storia {
+            padding: 80px 60px;
+            background-color: #0d1117;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .storia-testo h2 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .storia-testo h2 em {
+            font-style: normal;
+            color: #00ffff;
+        }
+
+        .storia-testo p {
+            font-size: 15px;
+            color: #888888;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .storia-testo p strong { color: #00ffff; }
+
+        .storia-valori {
+            background-color: #111111;
+            border: 1px solid #1e1e1e;
+            border-left: 3px solid #7b5ea7;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .valore h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 8px;
+        }
+
+        .valore p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        .cta {
+            padding: 80px 60px;
+            background-color: #0a0a0a;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: #888888;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .btn-home {
+            background-color: #00ffff;
+            color: black;
+            border: none;
+            padding: 14px 36px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-home:hover { background-color: white; }
+
+        footer {
+            background-color: #111111;
+            border-top: 1px solid #1e1e1e;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img.icona-ft { height: 30px; }
+        .footer-logo img.scritta-ft { height: 18px; }
+
+        footer p { font-size: 12px; color: #444444; }
+
+        .footer-links { list-style: none; display: flex; gap: 25px; }
+
+        .footer-links a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover { color: #00ffff; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo-nav">
+        <img src="immagini/logo-immagine.png" alt="logo retech" class="icona">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta">
+    </div>
+    <a href="index.html"><button class="btn-back">&#8592; Back to Home</button></a>
+</nav>
+
+<section class="hero">
+    <img src="immagini/logo-immagine.png" alt="logo retech" class="logo-grande">
+    <img src="immagini/logo-scritta.png" alt="retech scritta" class="scritta-grande">
+    <h1>About <em>Us</em></h1>
+    <p>
+        We are three students who decided to do something real about
+        one of the biggest environmental problems of our time: electronic waste.
+    </p>
+</section>
+
+<section class="sezione">
+    <h2>Meet the <em>Team</em></h2>
+    <div class="team-grid">
+        <div class="card-membro">
+            <div class="avatar">TD</div>
+            <h3>Talami Diego</h3>
+            <span class="ruolo">Co-founder / Hardware</span>
+            <p>
+                Diego built this website and manages the digital side of RE-TECH.
+                He started coding three year ago and has not stopped since.
+            </p>
+        </div>
+        <div class="card-membro">
+            <div class="avatar">GG</div>
+            <h3>Gatti Gabriele</h3>
+            <span class="ruolo">Co-founder / Web & Software</span>
+            <p>
+                Gabriele handles everything related to hardware and device collection.
+                He is the one who knows how to take apart a motherboard without breaking it.
+            </p>
+        </div>
+        <div class="card-membro">
+            <div class="avatar">IC</div>
+            <h3>Iacchetti Costantin</h3>
+            <span class="ruolo">Co-founder / Communication</span>
+            <p>
+                Costantin takes care of communication, outreach and awareness campaigns.
+                He is the reason people actually know RE-TECH exists.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="storia">
+    <div class="storia-testo">
+        <h2>Our <em>Story</em></h2>
+        <p>
+            RE-TECH started as a school project. The three of us were looking for
+            a topic for our technology class and stumbled upon a report about
+            <strong>e-waste in developing countries</strong>. What we read shocked us.
+        </p>
+        <p>
+            We decided we did not want to just write a report about it.
+            We wanted to actually do something. So we created RE-TECH:
+            a company focused on <strong>collecting, recycling and giving a second life</strong>
+            to discarded electronic devices.
+        </p>
+        <p>
+            We are still students, we are still learning, but we believe that
+            <strong>age is not an excuse</strong> to ignore a problem this big.
+        </p>
+    </div>
+    <div class="storia-valori">
+        <div class="valore">
+            <h3>&#9679; Transparency</h3>
+            <p>We publish every month how many kilograms of e-waste we have collected and recycled. No tricks.</p>
+        </div>
+        <div class="valore">
+            <h3>&#9679; Education</h3>
+            <p>We go to schools and companies to explain the e-waste problem because change starts with awareness.</p>
+        </div>
+        <div class="valore">
+            <h3>&#9679; Circular Economy</h3>
+            <p>Every device we collect either gets a second life or has its materials safely extracted and reused.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <p>
+        Want to know more about the e-waste problem and what RE-TECH is doing to fight it?
+    </p>
+    <a href="index.html"><button class="btn-home">&#8592; Back to Home</button></a>
+</section>
+
+<footer>
+    <div class="footer-logo">
+        <img src="immagini/logo-immagine.png" alt="logo" class="icona-ft">
+        <img src="immagini/logo-scritta.png" alt="retech" class="scritta-ft">
+    </div>
+    <ul class="footer-links">
+        <li><a href="#">privacy</a></li>
+        <li><a href="retech-simple.html">home</a></li>
+        <li><a href="#">contacts</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>
